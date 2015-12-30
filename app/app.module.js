@@ -1,4 +1,4 @@
-angular.module('movies', [
+angular.module('movieApp', [
   'ui.router',
   'ui.bootstrap'
 ])
