@@ -3,12 +3,17 @@ angular.module('movieApp').config(function ($stateProvider, $urlRouterProvider) 
   $urlRouterProvider.otherwise("/")
 
   $stateProvider
-    .state('search', {
+    .state('welcome', {
       url: '/',
+      templateUrl: "app/components/welcome/welcome.template.html",
+      //controller: "WelcomeCtrl"
+    })
+    .state('search', {
+      url: '/search',
       templateUrl: "app/components/search/search.template.html",
       controller: "SearchCtrl"
     })
-    .state("list", {
+    .state('list', {
       url: '/list',
       templateUrl: "app/components/list/list.template.html",
       controller: "ListCtrl"
