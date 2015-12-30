@@ -5,19 +5,27 @@
     <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.css">
   </head>
   <body ng-app="movieApp">
-      <div ui-view></div>
+      
     <script src="node_modules/angular/angular.min.js"></script>
     <script src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="node_modules/angular-bootstrap/ui-bootstrap.js"></script>
     <script src="node_modules/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-     </body>
+    
     <script src='app/app.module.js'> </script>
     <script src='app/app.routes.js'> </script>
+    
     <!--   Controllers -->
     <script src='app/components/create/create.controller.js'> </script>
     <script src='app/components/list/list.controller.js'> </script>
     <script src='app/components/search/search.controller.js'> </script>
     <script src='app/components/update/update.controller.js'> </script>
-    <!-- Templates -->
+    
+    <!-- Directives -->
+    <script src='app/shared/navbar/navbar.directive.js'> </script>
 
+
+    <h1> Brian's CRUD Movies! </h1>
+    <div ui-view></div>
+
+  </body>
 </html>
