@@ -1,6 +1,16 @@
 <div>
   <navbar></navbar>
   <h1> Search </h1>
-    <p> Test: {{ test }} </p>
+    <div>
+      <label> Search: </label>
+      <input type="text" ng-model="searchText"> </input>
+    </div> Test {{ movies }}
 
+    <div ng-repeat="movie in movies | filter:searchText">
+     <p> Title:  {{ movie.title }}  </p>
+     <p> Genre:  {{ movie.genre }}  </p>
+     <p> Year:   {{ movie.year }}  </p>
+     <p> Actors: {{ movie.actors }}  </p>
+     <p> Rating: {{ movie.rating }}  </p>
+    </div>
 <div>
