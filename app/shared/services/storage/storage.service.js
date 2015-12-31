@@ -30,6 +30,8 @@ angular.module("movieApp")
        }
     ];
 
+    var rememberedIndex = null;
+
     // Storage service is used to add movies to list, or get all the movies
     var Storage = {}
 
@@ -46,6 +48,27 @@ angular.module("movieApp")
         rating: movie.rating
       })
     }
+
+    Storage.deleteAndGet = function(index) {
+      movies.splice(index,1);
+      return movies;
+    }
+
+    Storage.update = function(movie, index) {
+      movies.splice(index, 1, movie);
+    }
+
+    // Getter/Setter saves and index or gets that index and associated movie
+    Storage.rememberIndex = function(index) {
+      console.log("index?", index)
+      if (index + 1) {
+        rememberedIndex = index;
+      }
+      else {
+        return [rememberedIndex, movies[rememberedIndex]];
+      }
+    }
+
 
     return Storage
   })

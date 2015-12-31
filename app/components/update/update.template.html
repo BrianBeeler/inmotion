@@ -1,5 +1,21 @@
 <div>
   <navbar></navbar>
   <h1> Update </h1>
-    <p> Test: {{ test }} </p>
+    <label> Title: </label>
+    <input type="text" ng-model='movie.title'></input> 
+    <br>
+    <label> Genre: </label>
+    <input type="text" ng-model='movie.genre'></input> 
+    <br>
+    <label> Actors: </label>
+    <input type="text" ng-model='movie.actors'></input> 
+    <br>
+    <label> Year: </label>
+    <input type="text" ng-model='movie.year'></input> 
+    <br>
+    <label> Rating: </label>
+    <input type="number" ng-model='movie.rating'></input> 
+    <br>
+    <button type='button' ng-click="updateMovie()"> Submit </button>
+  </form>
 <div>
