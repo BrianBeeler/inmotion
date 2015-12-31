@@ -6,11 +6,17 @@
       <input type="text" ng-model="searchText"> </input>
     </div> Test {{ movies }}
 
-    <div ng-repeat="movie in movies | filter:searchText">
-     <p> Title:  {{ movie.title }}  </p>
-     <p> Genre:  {{ movie.genre }}  </p>
-     <p> Year:   {{ movie.year }}  </p>
-     <p> Actors: {{ movie.actors }}  </p>
-     <p> Rating: {{ movie.rating }}  </p>
+    <div class='list' ng-repeat="movie in movies | filter:searchText">
+     <h3> {{ movie.title }} </h3>
+     <ul>
+      <li> <span> Genre:  {{ movie.genre }}  </a> </li>
+      <li> <span> Year:   {{ movie.year }}   </a> </li>
+      <li> <span> Actors: {{ movie.actors }} </a> </li>
+      <li> <span> Rating: {{ movie.rating }} </a> </li>
+      </ul>
+      <br>
     </div>
+
+
+
 <div>
