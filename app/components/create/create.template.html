@@ -3,20 +3,28 @@
   <h1> Create </h1>
   <form>
     <label> Title: </label>
-    <input type="text" ng-model='title'></input> 
-    <br>
+        <input type="text" ng-model='title'></input> 
+        <br>
     <label> Genre: </label>
-    <input type="text" ng-model='genre'></input> 
-    <br>
+        <input type="text" ng-model='genre'></input> 
+        <br>
     <label> Actors: </label>
-    <input type="text" ng-model='actors'></input> 
-    <br>
+        <input type="text" ng-model='actors'></input> 
+        <br>
     <label> Year: </label>
-    <input type="text" ng-model='year'></input> 
-    <br>
+        <input type="text" ng-model='year'></input> 
+        <br>
     <label> Rating: </label>
-    <input type="number" ng-model='rating'></input> 
-    <br>
+        <input type="number" ng-model='rating'></input> 
+        <br>
     <button type='button' ng-click="addMovie()"> Submit </button>
   </form>
+
+   <div ng-show='created'> 
+    <h4> You successfully added {{ created }}!  </h4>
+    <p> Add another movie, or <a ng-href='/#/list'> See all movies! </a>
+    <a ng-href="{{back}}" class="btn btn-info btn-lg pull-right">
+      Return
+    </a>
+  </div>
 </div>

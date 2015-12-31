@@ -1,5 +1,7 @@
 angular.module("movieApp").controller("CreateCtrl", function($scope, Storage) {
 
+  $scope.created = false
+
   // Click handler to creat a movie
   $scope.addMovie = function() {
 
@@ -13,6 +15,8 @@ angular.module("movieApp").controller("CreateCtrl", function($scope, Storage) {
         ratings: $scope.rating
       }
     )
+
+    $scope.created = $scope.title;
 
     // Clear form
     $scope.title = '';
