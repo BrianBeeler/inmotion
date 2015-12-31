@@ -2,7 +2,9 @@ angular.module("movieApp")
 
   .factory("Storage", function() {
 
-    // Give site some initial movie data
+    // ***Storage Variables***
+
+    // Hardcoded movie data
     var movies = [
       { title: "Star Wars: The Force Awakens",
         genre: "Fantasy/Science fiction",
@@ -31,17 +33,19 @@ angular.module("movieApp")
     ];
 
     var rememberedIndex = null;
-
     var previousPage = null;
+    var searchText = null;
 
-    // Storage service is used to add movies to list, or get all the movies
-    var Storage = {}
+    // Factory object
+    var Storage = {};
+
+    // ***CRUD Operations***
 
     // Get all movies
-    Storage.get = function() { return movies }
+    Storage.getMovies = function() { return movies }
 
-    // Add a movie to the list
-    Storage.add = function(movie) {
+    // Add a movie
+    Storage.addMovie = function(movie) {
       movies.push({
         title : movie.title,
         genre: movie.genre,
@@ -51,36 +55,49 @@ angular.module("movieApp")
       })
     }
 
+    // Delete a movie; return updated array
     Storage.deleteAndGet = function(index) {
       movies.splice(index,1);
       return movies;
     }
 
-    Storage.update = function(movie, index) {
-      movies.splice(index, 1, movie);
+    // Update a Movie
+    Storage.updateMovie = function(updatedMovie, index) {
+      movies.splice(index, 1, updatedMovie);
     }
 
-    // Getter/Setter saves and index or gets that index and associated movie
-    Storage.rememberIndex = function(index) {
-      console.log("index?", index)
-      if (index + 1) {
+    // ***Getter/Setters***
+
+    // Movie Index
+    Storage.Movie = function(index) {
+      if (index!==undefined) {
         rememberedIndex = index;
       }
       else {
+        // *Note: returns index AND the movie
         return [rememberedIndex, movies[rememberedIndex]];
       }
     }
 
-    Storage.savePage = function(url) {
-      previousPage = url
-      console.log("url:"+url+" saved")
+    // Page URL
+    Storage.Page = function(url) {
+      if (url!==undefined) {
+         previousPage = url;
+      }
+      else {
+        return previousPage
+      }
     }
 
-
-    Storage.getPreviousPage = function() {
-      return previousPage;
+    // Search Text
+    Storage.SearchText = function(text) {
+      if (text!==undefined) {
+        searchText = text;
+      }
+      else {
+        return searchText;
+      }
     }
-
 
     return Storage
-  })
+  });

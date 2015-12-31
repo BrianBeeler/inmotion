@@ -1,16 +1,19 @@
 angular.module("movieApp").controller("SearchCtrl", function($scope, $location, Storage) {
-  $scope.movies = Storage.get();
+  
+  //Get movies and previous search from storage
+  $scope.movies = Storage.getMovies();
+  $scope.searchText = Storage.SearchText();
+
+  // Delete movie, update $scope.movies
   $scope.deleteMovie = function(index) {
-    console.log("index", index)
-    //Storage.deleteAndGet deletes the movie in storage, and returns the new array
     $scope.movies = Storage.deleteAndGet(index)
   }
 
-  $scope.saveMovieToUpdate = function(index) {
-
-    console.log("is this working??")
-    Storage.rememberIndex(index);
-    Storage.savePage('#/search')
+  //Save page, search-text, movie; go to update form
+  $scope.updateMovie = function(index) {
+    Storage.Page('#/search')
+    Storage.SearchText($scope.searchText)
+    Storage.Movie(index);  
     $location.path("/update")
   }
 })

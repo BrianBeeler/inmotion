@@ -1,7 +1,10 @@
 angular.module("movieApp").controller("CreateCtrl", function($scope, Storage) {
-  $scope.test = "Create Controller Works"
+
+  // Click handler to creat a movie
   $scope.addMovie = function() {
-    Storage.add(
+
+    // Add the movie in storage Factory
+    Storage.addMovie(
       { 
         title: $scope.title,
         genre: $scope.genre,
@@ -11,6 +14,7 @@ angular.module("movieApp").controller("CreateCtrl", function($scope, Storage) {
       }
     )
 
+    // Clear form
     $scope.title = '';
     $scope.genre = '';
     $scope.actors = '';

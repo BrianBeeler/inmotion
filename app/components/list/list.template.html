@@ -1,6 +1,6 @@
 <div>
   <navbar></navbar>
-  <h1> List </h1>
+  <h1> All Movies! </h1>
     <div class='list' ng-repeat="movie in movies">
       <h3> {{ movie.title }} </h3>
         <ul>
@@ -8,6 +8,15 @@
           <li> <span> Year:   {{ movie.year }}   </a> </li>
           <li> <span> Actors: {{ movie.actors }} </a> </li>
           <li> <span> Rating: {{ movie.rating }} </a> </li>
+
+          <a href="" ng-click="deleteMovie($index)" class="btn btn-info btn-lg pull-right">
+            <span class="glyphicon glyphicon-trash"></span> Delete.
+          </a>
+
+          <a href="" ng-click="updateMovie($index)" class="btn btn-info btn-lg pull-right">
+            <span class="glyphicon glyphicon-pencil"></span> Edit...
+          </a>
+
         </ul>
         <br>
     </div>

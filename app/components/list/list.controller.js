@@ -1,15 +1,18 @@
-angular.module("movieApp").controller("ListCtrl", function($scope, Storage) {
-  $scope.movies = Storage.get();
+angular.module("movieApp").controller("ListCtrl", function($scope, $location, Storage) {
+  
+  // Get all movies from storage
+  $scope.movies = Storage.getMovies();
 
-  $scope.movies = Storage.get();
+  // Delete a movie and refresh $scope.movies
   $scope.deleteMovie = function(index) {
-    console.log("index", index)
-    //Storage.deleteAndGet deletes the movie in storage, and returns the new array
     $scope.movies = Storage.deleteAndGet(index)
   }
 
-  $scope.saveMovieToUpdate = function(index) {
-    Storage.rememberIndex(index);
-    Storage.savePage('/list')
+  $scope.updateMovie = function(index) {
+    // Save movie & current page
+    Storage.Movie(index);
+    Storage.Page('#/list');
+    // Go to update form
+    $location.path("/update");
   }
 });

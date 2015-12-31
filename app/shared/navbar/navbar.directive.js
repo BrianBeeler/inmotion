@@ -1,7 +1,9 @@
 angular.module('movieApp')
+
 .controller('NavCtrl', function ($scope, $state) {
-  // Controller if needed
+  // Nav-Bar Controller Here If Needed
 })
+
 .directive('navbar', function () {
   return {
     restrict: "E",
