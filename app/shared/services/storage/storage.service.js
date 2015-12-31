@@ -32,6 +32,8 @@ angular.module("movieApp")
 
     var rememberedIndex = null;
 
+    var previousPage = null;
+
     // Storage service is used to add movies to list, or get all the movies
     var Storage = {}
 
@@ -67,6 +69,16 @@ angular.module("movieApp")
       else {
         return [rememberedIndex, movies[rememberedIndex]];
       }
+    }
+
+    Storage.savePage = function(url) {
+      previousPage = url
+      console.log("url:"+url+" saved")
+    }
+
+
+    Storage.getPreviousPage = function() {
+      return previousPage;
     }
 
 

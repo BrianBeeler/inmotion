@@ -1,4 +1,4 @@
-angular.module("movieApp").controller("SearchCtrl", function($scope, Storage) {
+angular.module("movieApp").controller("SearchCtrl", function($scope, $location, Storage) {
   $scope.movies = Storage.get();
   $scope.deleteMovie = function(index) {
     console.log("index", index)
@@ -7,7 +7,10 @@ angular.module("movieApp").controller("SearchCtrl", function($scope, Storage) {
   }
 
   $scope.saveMovieToUpdate = function(index) {
+
+    console.log("is this working??")
     Storage.rememberIndex(index);
+    Storage.savePage('#/search')
+    $location.path("/update")
   }
-  
 })
