@@ -1,8 +1,9 @@
 <div>
   <navbar></navbar>
-  <h1> All Movies! </h1>
-    <div class='list' ng-repeat="movie in movies">
-      <h3> {{ movie.title }} </h3>
+  <br>
+  <h1 class='text-center'> All Movies! </h1>
+    <div class='container' ng-repeat="movie in movies">
+      <h3 class='text-center'> {{ movie.title }} </h3>
         <ul>
           <li> <span> Genre:  {{ movie.genre }}  </a> </li>
           <li> <span> Year:   {{ movie.year }}   </a> </li>

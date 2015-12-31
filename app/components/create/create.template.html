@@ -1,30 +1,38 @@
 <div>
-  <navbar></navbar>
-  <h1> Create </h1>
-  <form>
-    <label> Title: </label>
-        <input type="text" ng-model='title'></input> 
-        <br>
-    <label> Genre: </label>
-        <input type="text" ng-model='genre'></input> 
-        <br>
-    <label> Actors: </label>
-        <input type="text" ng-model='actors'></input> 
-        <br>
-    <label> Year: </label>
-        <input type="text" ng-model='year'></input> 
-        <br>
-    <label> Rating: </label>
-        <input type="number" ng-model='rating'></input> 
-        <br>
-    <button type='button' ng-click="addMovie()"> Submit </button>
-  </form>
-
-   <div ng-show='created'> 
-    <h4> You successfully added {{ created }}!  </h4>
-    <p> Add another movie, or <a ng-href='/#/list'> See all movies! </a>
-    <a ng-href="{{back}}" class="btn btn-info btn-lg pull-right">
-      Return
-    </a>
-  </div>
+    <navbar></navbar>
+    <div class='container'> 
+    <h1 class='text-center'> Add a new movie! </h1>
+    <form role="form" class='container'>
+        <div class='form-group'> 
+            <label> Title: </label>
+            <input type="text" class="form-control" ng-model='title'></input> 
+            <br>
+        </div>
+        <div class='form-group'>
+            <label> Genre: </label>
+            <input type="text" class="form-control" ng-model='genre'></input> 
+            <br>
+        </div>
+        <div class='form-group'>
+            <label> Actors: </label>
+            <input  class="form-control"  ng-model='actors'></input> 
+            <br>
+        </div>
+        <div class='form-group'>
+            <label> Year: </label>
+            <input type="text" class="form-control" ng-model='year'></input> 
+            <br>
+        </div>
+        <div class='form-group'>
+            <label> Rating: </label>
+            <input type="number" class="form-control" ng-model='rating'></input> 
+            <br>
+        </div>
+        <div class='form-group'>
+            <button type='button' class="btn btn-default" ng-click="addMovie()"> Add Movie! </button>
+            <span ng-show='created'> 
+                <h5> <strong> You added <em> {{ created }}</em>! Add another, or <a ng-href='/#/list'> See all movies! </strong> </p> 
+            </span>
+        </div>
+    </form>
 </div>
