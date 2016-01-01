@@ -1,24 +1,23 @@
 <div>
   <navbar></navbar>
-  <br>
-  <h1 class='text-center'> All Movies! </h1>
-    <div class='container' ng-repeat="movie in movies">
-      <h3 class='text-center'> {{ movie.title }} </h3>
-        <ul>
-          <li> <span> Genre:  {{ movie.genre }}  </a> </li>
-          <li> <span> Year:   {{ movie.year }}   </a> </li>
-          <li> <span> Actors: {{ movie.actors }} </a> </li>
-          <li> <span> Rating: {{ movie.rating }} </a> </li>
-
-          <a href="" ng-click="deleteMovie($index)" class="btn btn-info btn-lg pull-right">
-            <span class="glyphicon glyphicon-trash"></span> Delete.
-          </a>
-
-          <a href="" ng-click="updateMovie($index)" class="btn btn-info btn-lg pull-right">
-            <span class="glyphicon glyphicon-pencil"></span> Edit...
-          </a>
-
-        </ul>
-        <br>
+  <br><br>
+  <div class="container">
+    <h1 class='text-center'> All Movies! </h1>
+    <div class='list' ng-repeat="movie in movies">
+      <h3 class="text-center"><strong> {{ movie.title }} </strong></h3>
+      <ul>
+        <li> <span> Genre: {{ movie.genre }}</span></li>
+        <li> <span> Year: {{ movie.year }}</span></li>
+        <li> <span> Actors: {{ movie.actors }}</span></li>
+        <li> <span> Rating: {{ movie.rating }}</span></li>
+        <a href="" ng-click="deleteMovie($index)" class="btn btn-info btn-lg pull-right">
+          <span class="glyphicon glyphicon-trash"></span> Delete.
+        </a>
+        <a href="" ng-click="updateMovie($index)" class="btn btn-info btn-lg pull-right">
+          <span class="glyphicon glyphicon-pencil"></span> Edit...
+        </a>
+      </ul>
+      <br>
     </div>
-<div>
+  </div>
+</div>

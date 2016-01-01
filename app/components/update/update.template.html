@@ -1,32 +1,53 @@
 <div>
   <navbar></navbar>
-  <!-- Update Form -->
-  <form ng-hide='updated'>
-  <h1> Update Movie </h1>
-    <!-- Inputs -->
-    <label> Title: </label>
-      <input type="text" ng-model='movie.title'></input> 
-      <br>
-    <label> Genre: </label>
-      <input type="text" ng-model='movie.genre'></input> 
-      <br>
-    <label> Actors: </label>
-      <input type="text" ng-model='movie.actors'></input> 
-      <br>
-    <label> Year: </label>
-      <input type="text" ng-model='movie.year'></input> 
-      <br>
-    <label> Rating: </label>
-      <input type="number" ng-model='movie.rating'></input> 
-      <br>
-    <!-- Submit -->
-    <button type='button' ng-click="updateMovie()"> Submit </button>
-  </form>
-
+  <br>
+  <div class='container'> 
+    <form ng-hide="updated" role="form" class='container'>
+      <!-- Heading -->
+      <h1 class='text-center'> Update a Movie! </h1>
+      <!-- Title -->
+      <div class='form-group'> 
+          <label> Title </label>
+          <input type="text" class="form-control" ng-model='movie.title'></input> 
+          <br>
+      </div>
+      <!-- Genre -->
+      <div class='form-group'>
+          <label> Genre </label>
+          <input type="text" class="form-control" ng-model='movie.genre'></input> 
+          <br>
+      </div>
+      <!-- Actors -->
+      <div class='form-group'>
+        <label> Actors </label>
+          <input  class="form-control"  ng-model='movie.actors'></input> 
+          <br>
+      </div>
+      <!-- Year -->
+      <div class='form-group'>
+          <label> Year </label>
+          <input type="text" class="form-control" ng-model='movie.year'></input> 
+          <br>
+      </div>
+      <!-- Rating -->
+      <div class='form-group'>
+        <label> Rating </label>
+          <input type="number" class="form-control" ng-model='movie.rating'></input> 
+          <br>
+      </div>
+      <!-- Add movie button -->
+      <div class='form-group'>
+          <button type='button' class="btn btn-default" ng-click="updateMovie()"> 
+              Update
+          </button>   
+      </div>
+    </form>
+    <br>
+  </div>
   <!-- Success message and return button -->
-  <div ng-show='updated'> 
-    <h3> You successfully updated that movie! </h3>
-    <a ng-href="{{back}}" class="btn btn-info btn-lg pull-right">
+  <div class="message container" ng-show='updated'> 
+    <h3> You updated <em>{{movie.title}}</em> !</h3>
+    <a ng-href="{{back}}" class="btn btn-info btn-lg">
       Return
     </a>
   </div>

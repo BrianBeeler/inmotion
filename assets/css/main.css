@@ -15,6 +15,23 @@ body {
   background-color: #c6d3e2;
 }
 
+.main-nav li {
+  font-size: 1.2em;
+}
+
+.container form {
+  background-color: #edf3e8;
+  border-radius: 10px;
+  width: 50%;
+}
+
+.message {
+  background-color: #edf3e8;
+  border-radius: 10px;
+  width: 50%;
+  text-align: center;
+}
+
 li a {
     display: block;
     color: #22264b;
@@ -26,11 +43,24 @@ li a {
 a:hover:not(.active) {
     background-color: #edf3e8;
     text-decoration: none;
-    font-size: 14px;
 }
 
 .active {
 background-color:#f3eee8;
+}
+
+.message {
+  text-align: center;
+
+}
+
+.message a {
+  text-align: center;
+  float: none;
+}
+
+.message button {
+  text-align: center;
 }
 
 .list ul {
@@ -56,6 +86,8 @@ li span {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    font-size: 1.1em;
+    font-weight: bold;
 }
 
 div.list {
@@ -65,4 +97,24 @@ div.list {
 
 .btn {
   margin: 5px;
+  background-color: #69b5b5
+}
+
+.form-group {
+  text-align: center;
+}
+
+input {
+  text-align: center;
+}
+
+.welcome {
+  width: 65%;
+  text-align: center;
+  color: #e8edf3;
+}
+
+.background {
+  background-image: url("../images/moviepic.jpg");
+  background-size: 100% 100%;
 }
