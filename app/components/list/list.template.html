@@ -3,7 +3,8 @@
   <br><br>
   <div class="container">
     <h1 class='text-center'> All Movies! </h1>
-    <div class='list' ng-repeat="movie in movies">
+    <div class='list animate-repeat' ng-repeat="movie in movies" 
+                      ng-animate="{enter: 'animate-enter', leave: 'animate-leave'}">
       <h3 class="text-center"><strong> {{ movie.title }} </strong></h3>
       <ul>
         <li> <span> Genre: {{ movie.genre }}</span></li>
