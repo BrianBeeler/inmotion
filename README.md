@@ -1,6 +1,47 @@
 # inmotion
 challenge
 
+## Notes to Interviewers
+
+  - Stack: AngularJS, Bootstrap, Ng-Animate
+  - Running the application
+    - set up local clone of repo
+    - run "npm install"
+    - run "node server.js" or "nodemon server.js" to run aoo
+    - navigate to 'localhost:3000'
+  
+  - File Structure
+  
+    - app
+      - components
+        - create
+        - list
+        - search
+        - update
+        - welcome
+      - shared
+        - navbar
+        - services
+          - storage
+      - app.module.js
+      - app.routes.js
+    - assets
+      - css
+      - images
+    - index.html
+
+  - Future Considerations
+    - Refactor/Cleanup CSS
+    - Use database
+    - Improve asthetics
+    - Unit testing
+
+  - Time
+    - About 10 - 12 hours
+
+  - Thank You
+    - Thank you for reviewing this app, I hope you enjoy it, and I look forward to hearing feedback!
+
 # Instructions
 
 # Coding Challenge
